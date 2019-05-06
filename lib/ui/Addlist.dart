@@ -48,7 +48,7 @@ class AddlistState extends State<Addlist> {
                 onPressed: () {
                   if(_formkey.currentState.validate()){
                     Firestore.instance.collection('todo').add({
-                      'title': txtctrl.text,
+                      'title': _subject.text,
                       'done':0,
                     }).then((value){
                       
