@@ -46,11 +46,12 @@ class AddlistState extends State<Addlist> {
                   style: TextStyle(fontSize: 15),
                 ),
                 onPressed: () {
-                  if (_formkey.currentState.validate()) {
+                  if(_formkey.currentState.validate()){
                     Firestore.instance.collection('todo').add({
-                      'title': _subject.text,
-                      'done': 0,
-                    }).then((value) {
+                      'title': txtctrl.text,
+                      'done':0,
+                    }).then((value){
+                      
                       Navigator.pushReplacementNamed(context, '/');
                     });
                   }
